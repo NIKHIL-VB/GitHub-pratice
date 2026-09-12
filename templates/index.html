@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlotEase - Online Plot Booking</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PlotEase</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#plots">Available Plots</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Plot</h1>
+
+            <p>
+                Discover residential and commercial plots
+                for your future investment.
+            </p>
+
+            <a href="#plots" class="hero-button">
+                Explore Plots
+            </a>
+        </div>
+    </section>
+
+
+    <section class="search-section">
+        <h2>Search Your Dream Plot</h2>
+
+        <div class="search-box">
+            <input type="text" placeholder="Enter location">
+
+            <select>
+                <option value="">Select Plot Type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+            </select>
+
+            <button>Search</button>
+        </div>
+    </section>
+
+
+    <section class="plots-section" id="plots">
+        <h2>Available Plots</h2>
+
+        <div class="plot-container">
+
+            <div class="plot-card">
+                <div class="plot-image">Plot Image</div>
+
+                <div class="plot-details">
+                    <h3>Green Valley Layout</h3>
+
+                    <p>Location: Bengaluru</p>
+                    <p>Size: 1200 sq.ft</p>
+                    <p class="price">₹18,00,000</p>
+
+                    <button>View Details</button>
+                </div>
+            </div>
+
+
+            <div class="plot-card">
+                <div class="plot-image">Plot Image</div>
+
+                <div class="plot-details">
+                    <h3>Sunrise Residency</h3>
+
+                    <p>Location: Mysuru</p>
+                    <p>Size: 1500 sq.ft</p>
+                    <p class="price">₹22,00,000</p>
+
+                    <button>View Details</button>
+                </div>
+            </div>
+
+
+            <div class="plot-card">
+                <div class="plot-image">Plot Image</div>
+
+                <div class="plot-details">
+                    <h3>Urban Heights</h3>
+
+                    <p>Location: Hyderabad</p>
+                    <p>Size: 1000 sq.ft</p>
+                    <p class="price">₹15,00,000</p>
+
+                    <button>View Details</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="about-section" id="about">
+        <h2>About PlotEase</h2>
+
+        <p>
+            PlotEase helps customers discover and book
+            residential and commercial plots easily.
+        </p>
+    </section>
+
+
+    <footer id="contact">
+        <p>© 2026 PlotEase. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
