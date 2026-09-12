@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ plot.name }} - PlotEase</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlotEase
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#plots">Available Plots</a>
+        </div>
+
+    </nav>
+
+
+    <section class="details-page">
+
+        <div class="details-card">
+
+            <div class="large-plot-image">
+                Plot Image
+            </div>
+
+            <div class="details-content">
+
+                <h1>
+                    {{ plot.name }}
+                </h1>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ plot.location }}
+                </p>
+
+                <p>
+                    <strong>Plot Size:</strong>
+                    {{ plot.size }}
+                </p>
+
+                <p>
+                    <strong>Plot Type:</strong>
+                    {{ plot.type }}
+                </p>
+
+                <p class="details-price">
+                    <strong>Price:</strong>
+                    {{ plot.price }}
+                </p>
+
+                <button
+                    class="booking-button"
+                    onclick="alert('Booking feature will be available soon!')"
+                >
+                    Book This Plot
+                </button>
+
+                <br>
+
+                <a href="/" class="back-button">
+                    Back to Plots
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 PlotEase. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

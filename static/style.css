@@ -7,10 +7,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
+    background-color: #f4f7f6;
+    color: #333;
 }
 
+
+/* Navigation Bar */
 
 .navbar {
     display: flex;
@@ -18,7 +20,8 @@ body {
     align-items: center;
 
     padding: 20px 8%;
-    background-color: #12372a;
+
+    background-color: #1f4d3a;
     color: white;
 }
 
@@ -43,38 +46,41 @@ body {
 
 
 .nav-links a:hover {
-    color: #adbc9f;
+    color: #b8e0c2;
 }
 
 
+/* Hero Section */
+
 .hero {
-    min-height: 400px;
+    min-height: 420px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     text-align: center;
 
     background: linear-gradient(
-        rgba(18, 55, 42, 0.8),
-        rgba(18, 55, 42, 0.8)
+        rgba(31, 77, 58, 0.8),
+        rgba(31, 77, 58, 0.8)
     );
 }
 
 
 .hero-content {
     color: white;
+    padding: 30px;
 }
 
 
-.hero h1 {
+.hero-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
 
-.hero p {
+.hero-content p {
     font-size: 20px;
     margin-bottom: 30px;
 }
@@ -83,162 +89,421 @@ body {
 .hero-button {
     display: inline-block;
 
-    padding: 14px 25px;
+    padding: 14px 28px;
 
-    background-color: #adbc9f;
-    color: #12372a;
+    background-color: #f4b942;
+    color: #222;
 
     text-decoration: none;
-    border-radius: 5px;
+
+    border-radius: 6px;
 
     font-weight: bold;
 }
 
 
+.hero-button:hover {
+    background-color: #d99c25;
+}
+
+
+/* Search Section */
+
 .search-section {
-    padding: 40px 8%;
+    padding: 45px 8%;
     text-align: center;
     background-color: white;
 }
 
 
-.search-section h2,
-.plots-section h2,
-.about-section h2 {
+.search-section h2 {
     margin-bottom: 25px;
-    font-size: 30px;
+    color: #1f4d3a;
 }
 
 
-.search-box {
+.search-form {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 
-.search-box input,
-.search-box select {
-    padding: 14px;
-    width: 230px;
+.search-form input,
+.search-form select {
+    padding: 13px;
+
+    width: 240px;
+
     border: 1px solid #ccc;
     border-radius: 5px;
+
+    font-size: 15px;
 }
 
 
-button {
-    padding: 14px 22px;
+.search-form button {
+    padding: 13px 25px;
+
+    background-color: #1f4d3a;
+    color: white;
+
     border: none;
     border-radius: 5px;
 
-    background-color: #12372a;
-    color: white;
-
     cursor: pointer;
+
+    font-size: 15px;
 }
 
 
-button:hover {
-    background-color: #1f6048;
+.search-form button:hover {
+    background-color: #16392b;
 }
 
+
+/* Plots Section */
 
 .plots-section {
-    padding: 50px 8%;
+    padding: 60px 8%;
+}
+
+
+.plots-section h2 {
     text-align: center;
+
+    margin-bottom: 35px;
+
+    color: #1f4d3a;
+
+    font-size: 32px;
 }
 
 
 .plot-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: 30px;
 }
 
 
 .plot-card {
-    width: 300px;
     background-color: white;
 
     border-radius: 10px;
+
     overflow: hidden;
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease;
+}
+
+
+.plot-card:hover {
+    transform: translateY(-5px);
 }
 
 
 .plot-image {
-    height: 160px;
+    height: 180px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background-color: #adbc9f;
-    color: #12372a;
+    background-color: #c8dfd0;
 
+    color: #1f4d3a;
+
+    font-size: 22px;
     font-weight: bold;
 }
 
 
 .plot-details {
-    padding: 20px;
-    text-align: left;
+    padding: 25px;
 }
 
 
 .plot-details h3 {
-    margin-bottom: 12px;
+    color: #1f4d3a;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
 }
 
 
 .plot-details p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+
+    color: #555;
 }
 
 
-.price {
-    color: #12372a;
+.plot-details .price {
+    color: #d68a00;
+
+    font-size: 21px;
+
     font-weight: bold;
-    font-size: 18px;
+
+    margin-top: 15px;
 }
 
+
+.details-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    background-color: #1f4d3a;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+
+.details-button:hover {
+    background-color: #16392b;
+}
+
+
+.no-results {
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #777;
+}
+
+
+/* About Section */
 
 .about-section {
-    padding: 50px 8%;
-    text-align: center;
+    padding: 60px 8%;
+
     background-color: white;
+
+    text-align: center;
 }
 
+
+.about-section h2 {
+    color: #1f4d3a;
+
+    margin-bottom: 20px;
+}
+
+
+.about-section p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* Contact Section */
+
+.contact-section {
+    padding: 60px 8%;
+
+    text-align: center;
+}
+
+
+.contact-section h2 {
+    color: #1f4d3a;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-section p {
+    margin-bottom: 10px;
+}
+
+
+/* Details Page */
+
+.details-page {
+    padding: 70px 8%;
+
+    min-height: 600px;
+}
+
+
+.details-card {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+.large-plot-image {
+    min-height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #c8dfd0;
+
+    color: #1f4d3a;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.details-content {
+    padding: 45px;
+}
+
+
+.details-content h1 {
+    color: #1f4d3a;
+
+    margin-bottom: 25px;
+}
+
+
+.details-content p {
+    margin-bottom: 18px;
+
+    font-size: 17px;
+}
+
+
+.details-price {
+    color: #d68a00;
+
+    font-size: 22px !important;
+}
+
+
+.booking-button {
+    padding: 13px 22px;
+
+    background-color: #f4b942;
+    color: #222;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+
+.booking-button:hover {
+    background-color: #d99c25;
+}
+
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    background-color: #1f4d3a;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+
+.back-button:hover {
+    background-color: #16392b;
+}
+
+
+/* Footer */
 
 footer {
     padding: 25px;
-    text-align: center;
 
-    background-color: #12372a;
+    background-color: #1f4d3a;
+
     color: white;
+
+    text-align: center;
 }
 
 
-@media screen and (max-width: 768px) {
+/* Responsive Design */
+
+@media (max-width: 768px) {
 
     .navbar {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
+
 
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .hero h1 {
-        font-size: 34px;
+
+    .hero-content h1 {
+        font-size: 35px;
     }
 
-    .hero p {
+
+    .hero-content p {
         font-size: 17px;
     }
+
+
+    .details-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .large-plot-image {
+        min-height: 250px;
+    }
+
+
+    .details-content {
+        padding: 30px;
+    }
+
 }
