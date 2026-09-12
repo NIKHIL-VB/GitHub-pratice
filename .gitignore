@@ -1,0 +1,21 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# SQLite database
+bookings.db
+
+# Environment files
+.env
+
+# Flask instance folder
+instance/
+
+# Operating system files
+.DS_Store
+Thumbs.db

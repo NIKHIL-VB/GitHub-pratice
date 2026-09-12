@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Plot - PlotEase</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlotEase
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('home') }}#plots">
+                Available Plots
+            </a>
+        </div>
+
+    </nav>
+
+
+    <section class="booking-page">
+
+        <div class="booking-card">
+
+            <h1>
+                Book Your Plot
+            </h1>
+
+            <p class="booking-intro">
+                Fill in your details to book the selected plot.
+            </p>
+
+
+            <div class="selected-plot">
+
+                <h2>
+                    {{ plot.name }}
+                </h2>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ plot.location }}
+                </p>
+
+                <p>
+                    <strong>Size:</strong>
+                    {{ plot.size }}
+                </p>
+
+                <p>
+                    <strong>Type:</strong>
+                    {{ plot.type }}
+                </p>
+
+                <p class="details-price">
+                    <strong>Price:</strong>
+                    {{ plot.price }}
+                </p>
+
+            </div>
+
+
+            <form
+                action="{{ url_for('book_plot', plot_id=plot.id) }}"
+                method="POST"
+                class="booking-form"
+            >
+
+                <label for="customer_name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customer_name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label for="booking_date">
+                    Preferred Booking Date
+                </label>
+
+                <input
+                    type="date"
+                    id="booking_date"
+                    name="booking_date"
+                    required
+                >
+
+
+                <button type="submit" class="submit-booking-button">
+                    Confirm Booking
+                </button>
+
+            </form>
+
+
+            <a
+                href="{{ url_for('plot_details', plot_id=plot.id) }}"
+                class="back-button"
+            >
+                Back to Plot Details
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 PlotEase. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

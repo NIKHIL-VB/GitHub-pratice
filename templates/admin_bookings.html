@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - PlotEase</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlotEase Admin
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('admin_bookings') }}">
+                Bookings
+            </a>
+
+            <a href="{{ url_for('admin_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Admin Dashboard -->
+
+    <section class="admin-section">
+
+        <div class="admin-header">
+
+            <h1>
+                Customer Bookings
+            </h1>
+
+            <p>
+                Welcome, {{ session["admin_username"] }}.
+                View all bookings submitted by customers.
+            </p>
+
+        </div>
+
+
+        {% if bookings %}
+
+            <div class="table-container">
+
+                <table class="booking-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Booking ID
+                            </th>
+
+                            <th>
+                                Plot Name
+                            </th>
+
+                            <th>
+                                Location
+                            </th>
+
+                            <th>
+                                Customer Name
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Booking Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for booking in bookings %}
+
+                            <tr>
+
+                                <td>
+                                    {{ booking["id"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["plot_name"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["location"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["customer_name"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["email"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["phone"] }}
+                                </td>
+
+                                <td>
+                                    {{ booking["booking_date"] }}
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="no-results">
+
+                <h3>
+                    No Bookings Yet
+                </h3>
+
+                <p>
+                    Bookings will appear here after a customer
+                    submits the booking form.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 PlotEase. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

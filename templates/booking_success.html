@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Successful - PlotEase</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlotEase
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('home') }}#plots">
+                Available Plots
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="success-page">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Booking Successful!
+            </h1>
+
+            <p class="success-message">
+                Thank you, {{ customer_name }}.
+                Your booking has been saved successfully.
+            </p>
+
+
+            <div class="booking-summary">
+
+                <h2>
+                    Booking Summary
+                </h2>
+
+                <p>
+                    <strong>Booking ID:</strong>
+                    {{ booking_id }}
+                </p>
+
+                <p>
+                    <strong>Plot Name:</strong>
+                    {{ plot.name }}
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ plot.location }}
+                </p>
+
+                <p>
+                    <strong>Plot Size:</strong>
+                    {{ plot.size }}
+                </p>
+
+                <p>
+                    <strong>Plot Type:</strong>
+                    {{ plot.type }}
+                </p>
+
+                <p>
+                    <strong>Price:</strong>
+                    {{ plot.price }}
+                </p>
+
+                <hr>
+
+                <p>
+                    <strong>Customer Name:</strong>
+                    {{ customer_name }}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    {{ email }}
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    {{ phone }}
+                </p>
+
+                <p>
+                    <strong>Booking Date:</strong>
+                    {{ booking_date }}
+                </p>
+
+            </div>
+
+
+            <p class="success-note">
+                Our team will contact you soon for further confirmation.
+            </p>
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="home-button"
+            >
+                Return to Home
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 PlotEase. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>

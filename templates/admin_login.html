@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Login - PlotEase</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlotEase
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('home') }}#plots">
+                Available Plots
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Admin Login Section -->
+
+    <section class="admin-login-page">
+
+        <div class="admin-login-card">
+
+            <h1>
+                Admin Login
+            </h1>
+
+            <p class="admin-login-intro">
+                Login to access the PlotEase admin dashboard.
+            </p>
+
+
+            {% if error %}
+
+                <div class="login-error">
+                    {{ error }}
+                </div>
+
+            {% endif %}
+
+
+            <form
+                action="{{ url_for('admin_login') }}"
+                method="POST"
+                class="admin-login-form"
+            >
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter admin username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="admin-login-button"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="back-button"
+            >
+                Back to Home
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 PlotEase. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -2,16 +2,28 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>PlotEase - Online Plot Booking</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
 </head>
 
 <body>
+
+    <!-- =====================================
+         NAVIGATION BAR
+    ====================================== -->
 
     <nav class="navbar">
 
@@ -20,27 +32,53 @@
         </div>
 
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#plots">Available Plots</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('home') }}#plots">
+                Available Plots
+            </a>
+
+            <a href="{{ url_for('home') }}#about">
+                About
+            </a>
+
+            <a href="{{ url_for('home') }}#contact">
+                Contact
+            </a>
+
+            <a href="{{ url_for('admin_bookings') }}">
+                Admin Dashboard
+            </a>
+
         </div>
 
     </nav>
 
 
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
     <section class="hero">
 
         <div class="hero-content">
 
-            <h1>Find Your Perfect Plot</h1>
+            <h1>
+                Find Your Perfect Plot
+            </h1>
 
             <p>
                 Discover residential and commercial plots
                 in your preferred location.
             </p>
 
-            <a href="#plots" class="hero-button">
+            <a
+                href="{{ url_for('home') }}#plots"
+                class="hero-button"
+            >
                 Explore Plots
             </a>
 
@@ -49,11 +87,21 @@
     </section>
 
 
+    <!-- =====================================
+         SEARCH SECTION
+    ====================================== -->
+
     <section class="search-section">
 
-        <h2>Search for Plots</h2>
+        <h2>
+            Search for Plots
+        </h2>
 
-        <form action="/" method="GET" class="search-form">
+        <form
+            action="{{ url_for('home') }}"
+            method="GET"
+            class="search-form"
+        >
 
             <input
                 type="text"
@@ -64,18 +112,22 @@
 
             <select name="plot_type">
 
-                <option value="">All Plot Types</option>
+                <option value="">
+                    All Plot Types
+                </option>
 
-                <option value="residential"
-                    {% if search_type == "residential" %}
+                <option
+                    value="Residential"
+                    {% if search_type|lower == "residential" %}
                         selected
                     {% endif %}
                 >
                     Residential
                 </option>
 
-                <option value="commercial"
-                    {% if search_type == "commercial" %}
+                <option
+                    value="Commercial"
+                    {% if search_type|lower == "commercial" %}
                         selected
                     {% endif %}
                 >
@@ -93,9 +145,18 @@
     </section>
 
 
-    <section class="plots-section" id="plots">
+    <!-- =====================================
+         AVAILABLE PLOTS SECTION
+    ====================================== -->
 
-        <h2>Available Plots</h2>
+    <section
+        class="plots-section"
+        id="plots"
+    >
+
+        <h2>
+            Available Plots
+        </h2>
 
         {% if plots %}
 
@@ -111,20 +172,22 @@
 
                         <div class="plot-details">
 
-                            <h3>{{ plot.name }}</h3>
+                            <h3>
+                                {{ plot.name }}
+                            </h3>
 
                             <p>
-                                Location:
+                                <strong>Location:</strong>
                                 {{ plot.location }}
                             </p>
 
                             <p>
-                                Size:
+                                <strong>Size:</strong>
                                 {{ plot.size }}
                             </p>
 
                             <p>
-                                Type:
+                                <strong>Type:</strong>
                                 {{ plot.type }}
                             </p>
 
@@ -149,18 +212,43 @@
 
         {% else %}
 
-            <p class="no-results">
-                No plots found for your search.
-            </p>
+            <div class="no-results">
+
+                <h3>
+                    No plots found
+                </h3>
+
+                <p>
+                    Try another location or select
+                    "All Plot Types".
+                </p>
+
+                <a
+                    href="{{ url_for('home') }}"
+                    class="reset-button"
+                >
+                    Show All Plots
+                </a>
+
+            </div>
 
         {% endif %}
 
     </section>
 
 
-    <section class="about-section" id="about">
+    <!-- =====================================
+         ABOUT SECTION
+    ====================================== -->
 
-        <h2>About PlotEase</h2>
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <h2>
+            About PlotEase
+        </h2>
 
         <p>
             PlotEase helps users find and explore residential
@@ -170,20 +258,35 @@
     </section>
 
 
-    <section class="contact-section" id="contact">
+    <!-- =====================================
+         CONTACT SECTION
+    ====================================== -->
 
-        <h2>Contact Us</h2>
+    <section
+        class="contact-section"
+        id="contact"
+    >
+
+        <h2>
+            Contact Us
+        </h2>
 
         <p>
-            Email: support@plotease.com
+            Email:
+            support@plotease.com
         </p>
 
         <p>
-            Phone: +91 98765 43210
+            Phone:
+            +91 98765 43210
         </p>
 
     </section>
 
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
 
     <footer>
 
